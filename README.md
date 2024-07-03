@@ -1,10 +1,24 @@
-# Getting Started with Create React App
+# React To-Do Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple To-Do application built using ReactJS, Redux, and local storage. The application allows users to add, view, edit, delete, and mark tasks as completed.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
++ **Add Task**:Users can add new tasks using the input field and the add button.
++ **View Tasks**: Displays a list of tasks added by the user.
++ **Edit Task**: Users can edit the text of an existing task.
++ **Delete Task**: Users can delete a task from the list.
++ **Mark as Completed**: Users can mark a task as completed by clicking on the checkbox or the task label. 
++ **Local Storage**: The application saves the tasks in local storage to persist data across page refreshes.
+
+## Technologies Used
+
++ ReactJS: A JavaScript library for building user interfaces.
++ Redux: A predictable state container for JavaScript apps.
++ Redux Toolkit: The official, recommended way to write Redux logic.
++ Local Storage: Web storage API to store data locally within the user's browser.
+
+## Installation and Setup
 
 ### `npm start`
 
