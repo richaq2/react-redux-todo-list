@@ -21,7 +21,7 @@ const TaskInput = () => {
   }
 
   return (
-    <div class="add-task">
+    <div className="add-task">
       <input
         type="text"
          className="task-input"

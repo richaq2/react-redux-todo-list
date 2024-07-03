@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteTask, editTask, toggleTaskComplete } from '../redux/actions';
+import { deleteTask, editTask, } from '../redux/actions';
 
 const TaskList = () => {
   // Retrieve tasks from the Redux store
@@ -33,7 +33,7 @@ const TaskList = () => {
   const capitalizeFirstLetter = (text) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
   };
-  
+
  // Return null if tasks is not an array
   if (!Array.isArray(tasks)) {
     return null;
