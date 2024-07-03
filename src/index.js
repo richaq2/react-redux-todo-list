@@ -7,6 +7,7 @@ import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // Render the app with Redux provider
   <Provider store={store}>
     <App />
   </Provider>

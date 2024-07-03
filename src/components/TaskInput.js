@@ -12,14 +12,22 @@ const TaskInput = () => {
       setTask('');
     }
   };
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        dispatch(addTask(task));
+        setTask('');
+    }
+  }
 
   return (
     <div class="add-task">
       <input
         type="text"
-         class="task-input"
+         className="task-input"
         value={task}
         onChange={(e) => setTask(e.target.value)}
+        onKeyDown={handleKeyPress}
         placeholder="Add New Task"
       />
       <button className="submit-task" onClick={handleAddTask}></button>
