@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { deleteTask, editTask, } from '../redux/actions';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteTask, editTask } from "../redux/actions";
 
 const TaskList = () => {
   // Retrieve tasks from the Redux store
@@ -9,7 +9,7 @@ const TaskList = () => {
 
   // State for managing the task being edited
   const [editingTaskId, setEditingTaskId] = useState(null);
-  const [editingTaskText, setEditingTaskText] = useState('');
+  const [editingTaskText, setEditingTaskText] = useState("");
 
   // Handle task deletion
   const handleDelete = (id) => {
@@ -26,7 +26,7 @@ const TaskList = () => {
   const handleSave = (id) => {
     dispatch(editTask({ id, newTask: editingTaskText }));
     setEditingTaskId(null);
-    setEditingTaskText('');
+    setEditingTaskText("");
   };
 
   // Capitalize the first letter of the task text
@@ -34,7 +34,7 @@ const TaskList = () => {
     return text.charAt(0).toUpperCase() + text.slice(1);
   };
 
- // Return null if tasks is not an array
+  // Return null if tasks is not an array
   if (!Array.isArray(tasks)) {
     return null;
   }
@@ -45,17 +45,16 @@ const TaskList = () => {
         {tasks.map((task) => (
           <li className="task-list-item" key={task.id}>
             <label className="task-list-item-label">
-              <input className='check-input'
-               type="checkbox" />
+              <input className="check-input" type="checkbox" />
               {editingTaskId === task.id ? (
                 <input
                   type="text"
-                  className='edit-input'
+                  className="edit-input"
                   value={editingTaskText}
                   onChange={(e) => setEditingTaskText(e.target.value)}
                   onBlur={() => handleSave(task.id)}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
+                    if (e.key === "Enter") {
                       handleSave(task.id);
                     }
                   }}
@@ -66,7 +65,10 @@ const TaskList = () => {
               )}
             </label>
             <span className="edit-btn" onClick={() => handleEdit(task)}></span>
-            <span className="delete-btn" onClick={() => handleDelete(task.id)}></span>
+            <span
+              className="delete-btn"
+              onClick={() => handleDelete(task.id)}
+            ></span>
           </li>
         ))}
       </ul>

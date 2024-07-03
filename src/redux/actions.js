@@ -1,1 +1,1 @@
-export { addTask, deleteTask, editTask } from './reducers';
+export { addTask, deleteTask, editTask } from "./reducers";

@@ -1,10 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import taskReducer from './reducers';
+import { configureStore } from "@reduxjs/toolkit";
+import taskReducer from "./reducers";
 
 // Function to load tasks from local storage
 const loadState = () => {
   try {
-    const serializedState = localStorage.getItem('tasks');
+    const serializedState = localStorage.getItem("tasks");
     if (serializedState === null) {
       return undefined;
     }
@@ -17,10 +17,10 @@ const loadState = () => {
 const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem('tasks', serializedState);
+    localStorage.setItem("tasks", serializedState);
   } catch (err) {
     // Ignore write errors
-    console.log("data is not saved")
+    console.log("data is not saved");
   }
 };
 
